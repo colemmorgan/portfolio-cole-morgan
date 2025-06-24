@@ -5,6 +5,7 @@ type Props = {
   text: string;
   loaded: boolean;
   className?: string;
+  fontSize: number;
 };
 
 type WordPosition = {
@@ -13,7 +14,12 @@ type WordPosition = {
   element: HTMLSpanElement;
 };
 
-export default function SplitLinesSlideUp({ text, loaded, className }: Props) {
+export default function SplitLinesSlideUp({
+  fontSize,
+  text,
+  loaded,
+  className,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true });
   const [lines, setLines] = useState<WordPosition[][]>([]);
@@ -55,13 +61,13 @@ export default function SplitLinesSlideUp({ text, loaded, className }: Props) {
   return (
     <div ref={containerRef} className={`relative ${className}`}>
       {lines.length === 0 ? (
-        // Initial render: invisible spans to measure layout
         <div className="invisible flex flex-wrap overflow-hidden">
           {text.split(" ").map((word, i) => (
             <span
               key={i}
               data-word={word}
-              className="mr-1 inline-block whitespace-nowrap"
+              className="inline-block whitespace-nowrap"
+              style={{marginRight: fontSize / 4}}
             >
               {word}
             </span>
@@ -71,15 +77,19 @@ export default function SplitLinesSlideUp({ text, loaded, className }: Props) {
         // After measurement: animate per line
         <div className="flex flex-col overflow-hidden">
           {lines.map((line, i) => (
-            <div className="max-h-8 overflow-hidden" key={i}>
+            <div className="overflow-hidden" key={i} style={{ maxHeight: fontSize * 1.5 }}>
               <motion.div
                 initial={{ y: 64 }}
                 animate={shouldAnimate ? { y: 0 } : { y: 64 }}
-                transition={{ duration: 0.8, ease: "easeInOut", delay: i * 0.1 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
+                  delay: i * 0.1 + 0.05,
+                }}
                 className=""
               >
                 {line.map((word, j) => (
-                  <span key={j} className="mr-1 inline-block">
+                  <span key={j} className="inline-block" style={{marginRight: fontSize / 4}}>
                     {word.word}
                   </span>
                 ))}

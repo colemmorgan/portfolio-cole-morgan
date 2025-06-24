@@ -39,7 +39,7 @@ const SplitSlideUp = ({ char, index, shouldAnimate }: NameCharProps) => {
         transition={{
           duration: DURATION,
           ease: "easeInOut",
-          delay: STAGGER * index,
+          delay: STAGGER * index + 0.05,
         }}
       >
         {char}

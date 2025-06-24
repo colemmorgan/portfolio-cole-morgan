@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
-
+  
   --color-dark-base: #000000;
   --color-dark-50: #0a0a0a;
   --color-dark-100: #171717;
@@ -18,12 +18,37 @@
   --color-dark-950: #fafafa;
 }
 
-
 html {
   color-scheme: dark;
+  /* Hide scrollbar for html */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
+
+html::-webkit-scrollbar {
+  width: 0px; /* Chrome, Safari, Opera */
+}
+
 body {
   background-color: var(--color-dark-base);
   color: var(--color-dark-950);
   letter-spacing: -0.04em;
+  overflow-y: hidden;
+  /* Hide scrollbar for body */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+body::-webkit-scrollbar {
+  width: 0px; /* Chrome, Safari, Opera */
+}
+
+.container {
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.container::-webkit-scrollbar {
+  width: 0px; /* Chrome, Safari, Opera */
 }

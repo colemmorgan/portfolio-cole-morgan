@@ -10,7 +10,7 @@ type Props = {
 
 export const AnimatedHeader = ({ text, loaded }: Props) => {
   const wrapperRef = useRef(null);
-  const isInView = useInView(wrapperRef);
+  const isInView = useInView(wrapperRef, {once: true});
 
   const shouldAnimate = loaded && isInView;
 
