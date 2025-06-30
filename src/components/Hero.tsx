@@ -16,7 +16,7 @@ export default function Hero({ loaded }: HeroProps) {
     >
       <p className="text-dark-700 col-span-2 text-xl font-medium">01.</p>
       <div className="col-span-10">
-        <AnimatedHeader loaded={loaded} text="COLE MORGAN" />
+        <AnimatedHeader loaded={loaded} text="Cole Morgan" />
 
         <h2 className="text-dark-800 mt-4 text-2xl font-semibold">
           <SplitLinesSlideUp

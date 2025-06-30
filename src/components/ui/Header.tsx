@@ -17,7 +17,7 @@ export const AnimatedHeader = ({ text, loaded }: Props) => {
   return (
     <h1
       ref={wrapperRef}
-      className="text-7xl font-bold flex overflow-hidden"
+      className="text-7xl ins flex italic max-h-[72px] overflow-hidden"
     >
       {text.split("").map((char, index) => (
         <SplitSlideUp key={index} char={char} index={index} shouldAnimate={shouldAnimate} />

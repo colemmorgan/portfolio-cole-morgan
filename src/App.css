@@ -1,5 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+.ins {
+  font-family: "Instrument Serif", serif;
+}
+
+.test {
+  overflow-x: visible !important;
+  overflow-y: hidden !important;
+}
 
 @theme {
   --font-sans: "Inter", sans-serif;

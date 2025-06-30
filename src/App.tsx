@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { AnimatePresence, motion } from "framer-motion";
 import Projects from "./components/Projects";
+import Scene from "./components/Scene";
+import FooterScene from "./components/ui/FooterScene";
+import Footer from "./components/Footer";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -17,34 +20,42 @@ function App() {
       const timeout = setTimeout(() => {
         setLoaded(true);
         setShowLoader(false);
-        document.body.style.overflowY = "auto"
-      }, 700); // 1 second delay after full load
+        document.body.style.overflowY = "auto";
+      }, 300); // 1 second delay after full load
       return () => clearTimeout(timeout);
     }
   }, [progress]);
 
-   useEffect(() => {
+  useEffect(() => {
     window.history.scrollRestoration = "manual";
   }, []);
 
   return (
-    <main className="mx-auto max-w-[1180px] px-10 relative container">
-      <Nav />
-      <Hero loaded={loaded} />
-      <Experience />
-      <Projects/>
+    <main className="relative">
+      <div className="mx-auto max-w-[1180px] px-10">
+        <Nav />
+        <Hero loaded={loaded} />
+        <Experience />
+        <Projects />
+        <Footer/>
+      </div>
       <AnimatePresence>
         {!loaded && showLoader && (
-          <motion.div
-            key="loader"
-            className="absolute max-h-screen inset-0 z-50 bg-black flex items-center justify-center text-white text-xl"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            Loading...
-          </motion.div>
+          <>
+            <motion.div
+              key="loader"
+              className="absolute inset-0 z-10 flex max-h-screen items-center justify-center bg-black text-xl text-white"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              <img src="/loading-img.png" alt="" className="opacity-15 w-[500px] h-[500px]" />
+              <div className="absolute bottom-6 left-6 z-20 items-start text-start text-8xl font-semibold text-dark-700">
+                {progress.toFixed(0)}
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </main>

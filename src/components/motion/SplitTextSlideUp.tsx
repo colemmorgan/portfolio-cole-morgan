@@ -10,13 +10,18 @@ type NameCharProps = {
 };
 
 const SplitSlideUp = ({ char, index, shouldAnimate }: NameCharProps) => {
+  if(char === " ") {
+    return (
+      <div className="w-[18px]"></div>
+    )
+  }
   return (
-    <div className="min-w-5 relative overflow-hidden">
+    <div className="w-min relative ">
       <motion.span
         className="inline-block"
         variants={{
-          initial: { y: "0%" },
-          animate: { y: "-100%" },
+          initial: { y: "0%", },
+          animate: { y: "-110%",  },
         }}
         initial="initial"
         animate={shouldAnimate ? "animate" : "initial"}
@@ -29,10 +34,10 @@ const SplitSlideUp = ({ char, index, shouldAnimate }: NameCharProps) => {
         {char}
       </motion.span>
       <motion.span
-        className="absolute inset-0 inline-block"
+        className="absolute inset-0"
         variants={{
-          initial: { y: "100%" },
-          animate: { y: "0%" },
+          initial: { y: "100%",  },
+          animate: { y: "-5%", },
         }}
         initial="initial"
         animate={shouldAnimate ? "animate" : "initial"}
