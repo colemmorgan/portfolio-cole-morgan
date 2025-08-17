@@ -2,13 +2,11 @@ import { shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import { extend } from '@react-three/fiber';
 
-// Your shader material definition
 const NoiseShaderMaterial = shaderMaterial(
   {
     uTime: 0,
     uResolution: new THREE.Vector2(),
   },
-  // Vertex shader
   `
     varying vec2 vUv;
     void main() {
@@ -16,7 +14,6 @@ const NoiseShaderMaterial = shaderMaterial(
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     }
   `,
-  // Fragment shader
   `
     uniform float uTime;
     uniform vec2 uResolution;

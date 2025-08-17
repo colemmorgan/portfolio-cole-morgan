@@ -94,7 +94,7 @@ export function Nav() {
             </li>
             <li>
               <a
-                href=""
+                href="https://github.com/colemmorgan"
                 target="_blank"
                 className="text-foreground-tertiary hover:bg-background-tertiary hover:text-foreground-secondary transition-colors flex items-center gap-2 rounded-sm px-3 py-1.5 font-medium"
               >

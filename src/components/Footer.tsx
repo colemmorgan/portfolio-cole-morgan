@@ -2,7 +2,7 @@ import FooterScene from "./ui/FooterScene";
 
 export default function Footer() {
   return (
-    <footer className="border-background-secondary relative h-88 w-full overflow-hidden rounded-md border mt-24 z-40 bg-background-primary">
+    <footer className="border-background-secondary relative h-88 w-full overflow-hidden rounded-md border mt-36 z-40 bg-background-primary">
       <FooterScene />
       <div className="flex h-full flex-col justify-between p-6 relative z-10">
         <div className="">
