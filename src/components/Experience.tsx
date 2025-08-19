@@ -45,7 +45,7 @@ const experience = [
     href: "spcb",
   },
     {
-    name: "Freelance Developer + Designer",
+    name: "Freelance Dev + Designer",
     organization: "Freelance",
     year: "2024, 2025",
     desc: `Worked with clients such as professional soccer coaches and university organizations to deliver custom websites

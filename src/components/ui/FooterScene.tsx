@@ -78,7 +78,7 @@ const NoiseShaderMaterial = shaderMaterial(
       } else {
         // Light mode: invert and soften
         shade = 1.0 - shade; // Invert
-        shade = shade * 0.6 + 0.45; // Soften contrast (scale down and add base brightness)
+        shade = shade * 0.6 + 0.5; // Soften contrast (scale down and add base brightness)
         gl_FragColor = vec4(vec3(shade), 1.0);
       }
     }
