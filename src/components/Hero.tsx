@@ -1,4 +1,3 @@
-import React from "react";
 import CTAButton from "../buttons/CTAButton";
 import { ArrowUpRight } from "lucide-react";
 
@@ -15,7 +14,7 @@ export default function Hero() {
           I create software to help visualize and analyze satellite imagery.
         </span>
       </p>
-      <div className="mt-4 flex">
+      <div className="mt-5 flex">
         <CTAButton link="https://www.linkedin.com/in/cole-morgan-/">
           <p className="font-medium">Let's get in touch!</p>{" "}
           <ArrowUpRight size={18} />
@@ -28,7 +27,9 @@ export default function Hero() {
         <div className="bg-background-tertiary -ml-8 rotate-[10deg] overflow-hidden rounded-lg shadow-xl">
           <img src="/hero-2.png" alt="" className="h-16 w-16" />
         </div>
-        <div className="bg-background-tertiary -ml-8 h-16 w-16 rotate-[5deg] overflow-hidden rounded-lg"></div>
+        <div className="bg-background-tertiary -ml-8 h-16 w-16 rotate-[5deg] overflow-hidden rounded-lg">
+           <img src="/hero-3.png" alt="" className="h-16 w-16" />
+        </div>
         <div className="bg-background-tertiary -ml-8 h-16 w-16 rotate-[-5deg] overflow-hidden rounded-lg"></div>
         <div className="bg-background-tertiary -ml-8 h-16 w-16 overflow-hidden rounded-lg"></div>
       </div>

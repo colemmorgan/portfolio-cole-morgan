@@ -18,13 +18,13 @@ const projects: Project[] = [
     liveLink: "https://www.spcbatuf.org/",
     githubLink: "https://github.com/PCBuilding/SPCBWebsite",
   },
-  // {
-  //   src: "/projects/fd.webp",
-  //   title: "Professional Coaching Site",
-  //   tech: ["Nextjs", "TypeScript", "Figma", "Tailwind"],
-  //   desc: "Freelance design/development project I created for a client to tell a story about his career and create a personal brand.",
-  //   liveLink: "https://fionn.pro/",
-  // },
+  {
+    src: "fd",
+    title: "Professional Coaching Site",
+    tech: ["Nextjs", "TypeScript", "Figma", "Tailwind"],
+    desc: "Freelance design/development project I created for a client to tell a story about his career and create a personal brand.",
+    liveLink: "https://fionn.pro/",
+  },
   // {
   //   src: "/projects/prometheus.webp",
   //   title: "AI Wildfire Alert System",
@@ -65,7 +65,7 @@ export default function Projects() {
       <h3 className="text-foreground-tertiary text-lg font-medium tracking-wide">
         WORK
       </h3>
-      <ul className="grid gap-12 mt-8">
+      <ul className="grid gap-16 mt-8">
         {projects.map((project) => (
           <Project project={project} key={project.title} />
         ))}

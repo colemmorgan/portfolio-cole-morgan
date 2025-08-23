@@ -15,9 +15,7 @@ const experience = [
     name: "Software Engineer Intern",
     organization: "Satlantis US",
     year: "2025",
-    desc: `Worked with clients such as professional soccer coaches and university organizations to deliver custom websites
-    tailored to their needs.  Conducted regular meetings and calls with clients to ensure alignment on project goals, design aesthetics, and
-    functionality.
+    desc: `At Satlantis I build tools to make satellite spectral imagery more accessible and performant, including a high-performance imagery viewer using React and WebGL. I also develop full-stack solutions with a FastAPI backend for efficient imagery streaming and use Figma to prototype client-facing applications.
     `,
     tags: ["Frontend", "Freelance", "Next.js", "Design"],
     href: "spcb",
@@ -27,24 +25,24 @@ const experience = [
     name: "Peer Tutor, CS Department",
     organization: "University of Florida",
     year: "2025",
-    desc: `Redesigned the club's website as a responsive React application, improving the mobile performance score from 41 to 100. Worked with club officers to create a 
-            platform that effectively showcases the organization's mission and activities.
+    desc: `As a Peer Tutor for the CISE department at the University of Florida, I provided one-on-one and group support in discrete mathematics, data structures, programming fundamentals, and software engineering. I taught 
+    practical skills such as unit testing and debugging while collaborating with faculty and refining instructional materials based on student feedback.
             `,
     tags: ["Frontend", "Individual", "React", "Design"],
     href: "dsc",
   },
   {
     name: "Software Engineer",
-    organization: "Capital One + Society of PC Building",
+    organization: "CapTech University Partnership Program",
     year: "2024",
-    desc: `Worked within a development team to create a content management system and club website using Next.js, TypeScript and Firebase. Collaborated with executive 
-      and design teams utilizing Agile methodologies, participating in Scrum and weekly standups to create a personalized product.  
-    
+    desc: `Through the CapTech Partnership Program, I worked as a Software Engineer developing a Next.js, 
+    React, and TypeScript website with Firebase integration and a custom admin panel for the Society of PC Building. In this Agile environment, I collaborated with
+     designers, received mentorship from senior engineers, and presented deliverables to CapTech leadership for a published feature story.
     `,
     tags: ["Fullstack", "Team", "Next.js", "Firebase"],
     href: "spcb",
   },
-    {
+  {
     name: "Freelance Dev + Designer",
     organization: "Freelance",
     year: "2024, 2025",
@@ -55,7 +53,6 @@ const experience = [
     tags: ["Frontend", "Freelance", "Next.js", "Design"],
     href: "spcb",
   },
-  
 ];
 
 export default function Experience() {
@@ -90,7 +87,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ exp }) => {
       {/* Desktop View */}
       <li className="hidden sm:block">
         <div
-          className="group hover:bg-background-secondary text-foreground-secondary hover:text-foreground-primary grid cursor-pointer grid-cols-6 items-center py-3 font-medium transition-all"
+          className="group hover:bg-background-secondary grid cursor-pointer grid-cols-6 items-center py-3 font-medium transition-all"
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <div className="col-span-2 transition-all group-hover:pl-3">
