@@ -1,5 +1,6 @@
 import CTAButton from "../buttons/CTAButton";
 import { ArrowUpRight } from "lucide-react";
+import HeroPhotos from "./ui/HeroPhotos";
 
 export default function Hero() {
   return (
@@ -20,19 +21,8 @@ export default function Hero() {
           <ArrowUpRight size={18} />
         </CTAButton>
       </div>
-      <div className="mt-8 flex">
-        <div className="bg-background-tertiary rotate-[-10deg] overflow-hidden rounded-lg shadow-xl">
-          <img src="/hero-1.png" alt="" className="h-16 w-16" />
-        </div>
-        <div className="bg-background-tertiary -ml-8 rotate-[10deg] overflow-hidden rounded-lg shadow-xl">
-          <img src="/hero-2.png" alt="" className="h-16 w-16" />
-        </div>
-        <div className="bg-background-tertiary -ml-8 h-16 w-16 rotate-[5deg] overflow-hidden rounded-lg">
-           <img src="/hero-3.png" alt="" className="h-16 w-16" />
-        </div>
-        <div className="bg-background-tertiary -ml-8 h-16 w-16 rotate-[-5deg] overflow-hidden rounded-lg"></div>
-        <div className="bg-background-tertiary -ml-8 h-16 w-16 overflow-hidden rounded-lg"></div>
-      </div>
+      <HeroPhotos/>
+     
     </div>
   );
 }

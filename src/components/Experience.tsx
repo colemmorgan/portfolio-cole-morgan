@@ -57,7 +57,7 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section className="mt-24 pt-12">
+    <section className="mt-12 pt-12">
       <h3 className="text-foreground-tertiary text-lg font-semibold tracking-wide">
         EXPERIENCE
       </h3>
