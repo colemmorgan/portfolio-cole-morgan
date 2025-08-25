@@ -33,14 +33,14 @@ export default function HeroPhotos() {
       height: 64,
       rotate,
       marginLeft: i === 0 ? 0 : -32,
-      transition: { duration: 0.25, ease: "easeInOut" },
+      transition: { duration: 0.225, ease: "easeInOut" },
     },
     hover: {
       width: 96,
       height: 96,
       rotate: 0,
       marginLeft: i === 0 ? 0 : 8,
-      transition: { duration: 0.25, ease: "easeInOut" },
+      transition: { duration: 0.225, ease: "easeInOut" },
     },
   });
 
@@ -55,7 +55,7 @@ export default function HeroPhotos() {
       {photos.map((p, i) => (
         <motion.div
           key={i}
-          className="bg-background-tertiary overflow-hidden rounded-lg shadow-xl"
+          className="bg-background-tertiary overflow-hidden rounded-lg shadow-xl cursor-pointer"
           variants={photo(p.rotate, i)}
         >
           <motion.img
@@ -66,7 +66,7 @@ export default function HeroPhotos() {
               rest: { width: 64, height: 64 },
               hover: { width: 96, height: 96 },
             }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.225, ease: "easeInOut" }}
           />
         </motion.div>
       ))}

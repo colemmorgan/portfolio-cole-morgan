@@ -5,6 +5,7 @@ import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Hero from "../components/Hero";
 import { useHomeScrollProgress } from '../hooks/useHomeScrollProgress';
+import Awards from "../components/Awards";
 
 export default function Home() {
 
@@ -25,8 +26,9 @@ export default function Home() {
             <Projects/>
           </div>
           <div ref={awardsRef} id="awards">
-            <Footer />
+           <Awards/>
           </div>
+           <Footer />
         </div>
       </div>
     </HomeLayout>
