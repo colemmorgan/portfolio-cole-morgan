@@ -25,38 +25,29 @@ const projects: Project[] = [
     desc: "Freelance design/development project I created for a client to tell a story about his career and create a personal brand.",
     liveLink: "https://fionn.pro/",
   },
-  // {
-  //   src: "/projects/prometheus.webp",
-  //   title: "AI Wildfire Alert System",
-  //   tech: ["React", "TypeScript", "Figma", "Python", "FastAPI"],
-  //   desc: "Monitor live national park cameras or upload your own cameras and recieve instant call alerts if fire is detected.",
-  //   githubLink: "https://github.com/kgand/prometheus",
-  // },
-  // {
-  //   src: "/projects/cc.webp",
-  //   title: "Coding Question Platform",
-  //   tech: ["React", "Recoil", "Docker", "Firebase", "Tailwind"],
-  //   desc: "A coding question platform with real-time grading and tracking through Firebase and containerized code execution.",
-  //   liveLink: "https://code-code-theta.vercel.app/",
-  //   githubLink: "https://github.com/colemmorgan/CodeCode",
-  // },
-  // {
-  //   src: "/projects/dsc2.webp",
-  //   title: "Google DSC Landing Page",
-  //   tech: ["React", "TypeScript", "Figma", "Tailwind"],
-  //   desc: "Developed and designed a modern landing page for a student organization with micro-interactions using React & Framer Motion.",
-  //   liveLink: "https://ufdsc.org/",
-  //   githubLink: "https://github.com/colemmorgan/ufdsc",
-  // },
-
-  // {
-  //   src: "/projects/fufillment.webp",
-  //   title: "Medical Microcredentialing App",
-  //   tech: ["React", "Recoil", "TypeScript", "Firebase"],
-  //   desc: "A full-stack web app that rewards users for expanding their medical knowledge through live trivia, courses, and notecards.",
-  //   liveLink: "https://fufillment-n5cn.vercel.app/",
-  //   githubLink: "https://github.com/colemmorgan/Medihacks2024",
-  // },
+  {
+    src: "prometheus",
+    title: "AI Wildfire Alert System",
+    tech: ["React", "TypeScript", "Figma", "Python", "FastAPI"],
+    desc: "Monitor live national park cameras or upload your own cameras and recieve instant call alerts if fire is detected.",
+    githubLink: "https://github.com/kgand/prometheus",
+  },
+  {
+    src: "codecode",
+    title: "Coding Question Platform",
+    tech: ["React", "Recoil", "Docker", "Firebase", "Tailwind"],
+    desc: "A coding question platform with real-time grading and tracking through Firebase and containerized code execution.",
+    liveLink: "https://code-code-theta.vercel.app/",
+    githubLink: "https://github.com/colemmorgan/CodeCode",
+  },
+  {
+    src: "dsc",
+    title: "Google DSC Landing Page",
+    tech: ["React", "TypeScript", "Figma", "Tailwind"],
+    desc: "Developed and designed a modern landing page for a student organization with micro-interactions using React & Framer Motion.",
+    liveLink: "https://ufdsc.org/",
+    githubLink: "https://github.com/colemmorgan/ufdsc",
+  },
 ];
 
 export default function Projects() {
