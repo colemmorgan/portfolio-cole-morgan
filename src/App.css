@@ -28,8 +28,8 @@
 :root.light {
   color-scheme: light;
   /* LIGHT Background colors */
-  --color-background-primary: #fafafa;
-  --color-background-secondary: #f5f5f5;
+  --color-background-primary: #fff;
+  --color-background-secondary: #fafafa;
   --color-background-tertiary: #e8e8e8;
   --color-background-accent: #d4d4d4;
   /* LIGHT Foreground/text colors */
@@ -74,8 +74,8 @@
 }
 
 @theme light {
-  --color-background-primary: #fafafa;
-  --color-background-secondary: #f5f5f5;
+  --color-background-primary: #fff;
+  --color-background-secondary: #fafafa;
   --color-background-tertiary: #e8e8e8;
   --color-background-accent: #d4d4d4;
   --color-foreground-primary: #191919;

@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { RiGithubLine, RiLinkedinBoxLine } from "react-icons/ri";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useScrollProgressStore } from "../stores/scrollProgressStore";
 
 type LinkType = "navigation" | "download" | "mailto";
@@ -109,51 +109,71 @@ const scrollToSection = (sectionId: string) => {
   });
 };
 
-export function Nav() {
+type NavProps = {
+  showSidebar: boolean;
+  hasLoaded: boolean;
+};
+
+export function Nav({ showSidebar, hasLoaded }: NavProps) {
   const scrollProgress = useScrollProgressStore();
 
   return (
-    <nav className="bg-background-secondary border-background-tertiary h-screen w-60 border-r p-2">
-      <div className="flex items-center gap-2 px-3 py-1">
-        <figure>
-          <img
-            src="/icon.png"
-            alt=""
-            className="border-background-tertiary h-8 w-8 rounded-full border"
-          />
-        </figure>
-        <p className="text-sm font-semibold">Cole Morgan</p>
-      </div>
-      <div className="mt-2 pt-3">
-        <p className="text-foreground-tertiary pl-3 text-xs">Contact</p>
-        <ul className="mt-2 grid gap-1 text-sm">
-          {contactLinks.map((link, index) => (
-            <NavLink
-              key={index}
-              icon={link.icon}
-              name={link.name}
-              href={link.href}
-              type={link.type}
-            />
-          ))}
-        </ul>
-      </div>
-      <div className="mt-2 pt-3">
-        <p className="text-foreground-tertiary pl-3 text-xs">Sections</p>
-        <ul className="mt-2 grid gap-1 text-sm">
-          {sectionAnchors.map((section, index) => (
-            <NavSectionAnchor
-              key={index}
-              icon={section.icon}
-              name={section.name}
-              href={section.href}
-              progress={scrollProgress[section.progressKey]}
-              onNavigate={() => scrollToSection(section.href)}
-            />
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <AnimatePresence>
+      {showSidebar && (
+        <motion.div
+          initial={hasLoaded ? { width: 0 } : { width: 240 }}
+          animate={{ width: 240 }}
+          exit={{ width: 0 }}
+          transition={{
+            duration: 0.25,
+            ease: "easeInOut",
+          }}
+          className="overflow-hidden"
+        >
+          <nav className="hidden lg:block bg-background-secondary border-background-tertiary h-screen w-60 border-r p-2">
+            <div className="flex items-center gap-2 px-3 py-1">
+              <figure>
+                <img
+                  src="/icon.png"
+                  alt=""
+                  className="border-background-tertiary h-8 w-8 rounded-full border"
+                />
+              </figure>
+              <p className="text-sm font-semibold">Cole Morgan</p>
+            </div>
+            <div className="mt-2 pt-3">
+              <p className="text-foreground-tertiary pl-3 text-xs">Contact</p>
+              <ul className="mt-2 grid gap-1 text-sm">
+                {contactLinks.map((link, index) => (
+                  <NavLink
+                    key={index}
+                    icon={link.icon}
+                    name={link.name}
+                    href={link.href}
+                    type={link.type}
+                  />
+                ))}
+              </ul>
+            </div>
+            <div className="mt-2 pt-3">
+              <p className="text-foreground-tertiary pl-3 text-xs">Sections</p>
+              <ul className="mt-2 grid gap-1 text-sm">
+                {sectionAnchors.map((section, index) => (
+                  <NavSectionAnchor
+                    key={index}
+                    icon={section.icon}
+                    name={section.name}
+                    href={section.href}
+                    progress={scrollProgress[section.progressKey]}
+                    onNavigate={() => scrollToSection(section.href)}
+                  />
+                ))}
+              </ul>
+            </div>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

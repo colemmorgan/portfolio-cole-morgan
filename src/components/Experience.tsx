@@ -94,7 +94,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ exp }) => {
             {exp.name}
           </div>
           <div className="col-span-3">{exp.organization}</div>
-          <div className="col-span-1 flex justify-end transition-all group-hover:pr-3">
+          <div className="col-span-1 flex justify-end transition-all group-hover:pr-3 text-foreground-secondary">
             {exp.year}
           </div>
         </div>
