@@ -74,7 +74,7 @@ export default function HeroPhotos() {
   return (
     <>
       <motion.div
-        className="mt-8 flex h-24 w-fit"
+        className="mt-10 flex h-24 w-fit"
         initial="rest"
         animate={isAnyImageHovered ? "hover" : "rest"}
         variants={container}
