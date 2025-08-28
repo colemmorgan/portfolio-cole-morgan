@@ -2,22 +2,30 @@ import FooterScene from "./ui/FooterScene";
 
 export default function Footer() {
   return (
-    <footer className="border-background-tertiary relative h-88 w-full overflow-hidden rounded-md border mt-36 z-40 bg-background-primary">
-      <FooterScene />
-      <div className="flex h-full flex-col justify-between p-6 relative z-10">
-        <div className="">
-          <p className="text-dark-900 text-3xl italic font-instrument">Cole Morgan</p>
-          <p className="text-dark-700 pt-0.5 underline">colemmorgann@gmail.com</p>
+    <section className="mt-36 sm:mb-8 sm:px-8">
+      <footer className="border-background-tertiary bg-background-primary relative z-40 h-88 w-full overflow-hidden border-t sm:border sm:rounded-md">
+        <FooterScene />
+        <div className="relative z-10 flex h-full flex-col justify-between p-6">
+          <div className="grid gap-1">
+            <p className="font-instrument text-2xl italic sm:text-3xl">
+              Cole Morgan
+            </p>
+            <a
+              href=""
+              target="_blank"
+              className="cursor-pointer text-sm underline"
+            >
+              Source Code
+            </a>
+          </div>
+          <div className="flex items-end justify-between">
+            <p className="text-sm">© 2025 Cole Morgan. All rights reserved.</p>
+            <figure className="hidden sm:block">
+              <img src="/icon.png" alt="" className="h-8 w-8" />
+            </figure>
+          </div>
         </div>
-        <div className="flex justify-between items-end">
-          <p className="text-dark-700 text-sm">
-            © 2025 Cole Morgan. All rights reserved.
-          </p>
-          <figure>
-            <img src="/icon.png" alt="" className="w-8 h-8"/>
-          </figure>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </section>
   );
 }

@@ -1,18 +1,17 @@
-import CTAButton from "../buttons/CTAButton";
 import { ArrowUpRight } from "lucide-react";
 import HeroPhotos from "./ui/HeroPhotos";
+import CTAButton from "./buttons/CTAButton";
 
 export default function Hero() {
   return (
-    <div className="pt-12"   id="hero">
-      {/* <h1 className="font-instrument text-5xl italic">Cole Morgan</h1> */}
-      <p className="max-w-[960px] text-[36px] font-semibold leading-[1.30]">
+    <div className="pt-[119px] lg:pt-12 px-6 sm:px-8"  id="hero">
+      <p className="max-w-[960px] text-2xl md:text-3xl xl:text-4xl font-semibold leading-normal md:leading-[1.32]">
         Hi! I'm Cole Morgan, a front-end focused software engineer at the
         University of Florida.{" "}
         <span className="text-foreground-tertiary">
           {" "}
-          I currently currently work as a software engineering intern for Satlantis where
-          I create software to help visualize and analyze satellite imagery.
+          I currently work as a fullstack intern at Satlantis where
+          I create software to help search, discover, and analyze satellite imagery.
         </span>
       </p>
       <div className="mt-6 flex">

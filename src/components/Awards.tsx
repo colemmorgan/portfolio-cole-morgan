@@ -1,37 +1,10 @@
-
-type award = {
-  desc: string;
-  year: string;
-  href: string;
-};
-
-const awards: award[] = [
-  {
-    desc: `SwamphacksX "Best Use of Auth0"`,
-    year: "2025",
-    href: "https://devpost.com/software/prometheus-rh7oxz",
-  },
-  {
-    desc: "MediHacks 2024 Hackathon Winner",
-    year: "2024",
-    href: "https://devpost.com/software/fulfillment",
-  },
-  {
-    desc: "Nurturing Gator Unity Hackathon Winner",
-    year: "2024",
-    href: "https://devpost.com/software/access-for-all-ymhp6n",
-  },
-  {
-    desc: "KatyYouthHacks Hackathon Winner",
-    year: "2024",
-    href: "https://devpost.com/software/chroma-qmc9ti",
-  },
-];
+import { awards } from "../content";
+import type { Award } from "../types/award";
 
 export default function Awards() {
   return (
     <div
-      className="mt-24 pt-12"
+      className="mt-24 pt-12 px-6 sm:px-8"
       id="awards"
     >
       <p className="text-foreground-tertiary tracking-wide font-medium text-lg">AWARDS</p>
@@ -47,7 +20,7 @@ export default function Awards() {
 }
 
 type AwardProps = {
-  award: award;
+  award: Award;
 };
 
 const Award: React.FC<AwardProps> = ({ award }) => {

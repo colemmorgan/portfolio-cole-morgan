@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <HomeLayout>
-      <div className="relative mx-auto min-h-screen max-w-6xl px-8 pb-6">
+      <div className="relative mx-auto min-h-screen max-w-6xl">
         <Gridlines/>
         <div className="relative z-20">
           <div ref={heroRef}>
