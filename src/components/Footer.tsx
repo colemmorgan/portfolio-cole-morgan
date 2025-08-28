@@ -11,7 +11,7 @@ export default function Footer() {
               Cole Morgan
             </p>
             <a
-              href=""
+              href="https://github.com/colemmorgan/portfolio-cole-morgan"
               target="_blank"
               className="cursor-pointer text-sm underline"
             >
