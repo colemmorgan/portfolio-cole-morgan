@@ -1,38 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
   color-scheme: dark;
-  /* DARK Background colors */
+
   --color-background-primary: #191919;
   --color-background-secondary: #202020;
   --color-background-tertiary: #2c2c2c;
   --color-background-accent: #3a3a3a;
-  /* DARK Foreground/text colors */
+
   --color-foreground-primary: #fafafa;
   --color-foreground-secondary: #e0e0e0;
-  --color-foreground-tertiary: #a3a3a3; 
-  /* FONTS */
+  --color-foreground-tertiary: #a3a3a3;
+
   --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-instrument: "Instrument Serif", serif;
-  /* Static colors for elements that do not change based on theme */
-  --color-static-background-primary: #191919;
-  --color-static-background-secondary: #202020;
-  --color-static-background-tertiary: #2c2c2c;
-  --color-static-background-accent: #3a3a3a;
-  --color-static-foreground-primary: #fafafa;
-  --color-static-foreground-secondary: #e0e0e0;
-  --color-static-foreground-tertiary: #a3a3a3;
 }
 
 :root.light {
   color-scheme: light;
-  /* LIGHT Background colors */
+
   --color-background-primary: #fff;
   --color-background-secondary: #fafafa;
   --color-background-tertiary: #e8e8e8;
   --color-background-accent: #d4d4d4;
-  /* LIGHT Foreground/text colors */
+
   --color-foreground-primary: #191919;
   --color-foreground-secondary: #4a4a4a;
   --color-foreground-tertiary: #6a6a6a;
@@ -44,33 +36,13 @@
   --color-background-secondary: #202020;
   --color-background-tertiary: #2c2c2c;
   --color-background-accent: #3a3a3a;
+
   --color-foreground-primary: #fafafa;
   --color-foreground-secondary: #e0e0e0;
   --color-foreground-tertiary: #a3a3a3;
-  --color-border: #3a3a3a;
-  --color-divider: #2c2c2c;
-  --color-hover: #d4d4d4;
-  --color-focus: #f5f5f5;
-  --color-primary: #008BAF;
-  --color-foreground-primary-button: #fafafa;
 
-  --color-secondary: #003A4E;
   --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-instrument: "Instrument Serif", serif;
-
-
-  --color-static-background-primary: #191919;
-  --color-static-background-secondary: #202020;
-  --color-static-background-tertiary: #2c2c2c;
-  --color-static-background-accent: #3a3a3a;
-  --color-static-light-primary: #fafafa;
-  --color-static-light-secondary: #e0e0e0;
-  --color-static-foreground-tertiary: #a3a3a3;
-  --color-static-border: #3a3a3a;
-  --color-static-divider: #2c2c2c;
-  --color-static-hover: #d4d4d4;
-  --color-static-focus: #f5f5f5;
-  --color-static-primary: #008BAF;
 }
 
 @theme light {
@@ -78,44 +50,12 @@
   --color-background-secondary: #fafafa;
   --color-background-tertiary: #e8e8e8;
   --color-background-accent: #d4d4d4;
+
   --color-foreground-primary: #191919;
   --color-foreground-secondary: #4a4a4a;
   --color-foreground-tertiary: #6a6a6a;
-  --color-border: #d4d4d4;
-  --color-divider: #e0e0e0;
-  --color-hover: #3a3a3a;
-  --color-focus: #2c2c2c;
-  --color-primary: #395577;
-  --color-secondary: #B8DBF2;
-  --color-foreground-primary-button: #fafafa;
 
-  --color-secondary: #003A4E;
   --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-
-
-  --color-static-background-primary: #191919;
-  --color-static-background-secondary: #202020;
-  --color-static-background-tertiary: #2c2c2c;
-  --color-static-background-accent: #3a3a3a;
-  --color-static-foreground-primary: #fafafa;
-  --color-static-foreground-secondary: #e0e0e0;
-  --color-static-foreground-tertiary: #a3a3a3;
-  --color-static-border: #3a3a3a;
-  --color-static-divider: #2c2c2c;
-  --color-static-hover: #d4d4d4;
-  --color-static-focus: #f5f5f5;
-  --color-static-primary: #008BAF;
-}
-
-/* Static class that never changes regardless of theme */
-.static {
-  background-color: var(--color-static-background-primary) !important;
-  color: var(--color-static-foreground-primary) !important;
-}
-
-.static * {
-  background-color: var(--color-static-background-primary);
-  color: var(--color-static-foreground-primary);
 }
 
 /* Define custom variant for dark mode */
