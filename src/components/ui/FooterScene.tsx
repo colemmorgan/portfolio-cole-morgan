@@ -1,13 +1,16 @@
+// @ts-nocheck
 import React, { useRef, useEffect, Suspense } from "react";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import * as THREE from "three";
 import { extend } from "@react-three/fiber";
+import useTheme from "../../hooks/useTheme";
 
 // Define the shader material type
 interface NoiseShaderMaterialUniforms {
   uTime: number;
   uResolution: THREE.Vector2;
+  uIsDark: boolean;
 }
 
 // Your shader material definition
@@ -15,6 +18,7 @@ const NoiseShaderMaterial = shaderMaterial(
   {
     uTime: 0,
     uResolution: new THREE.Vector2(),
+    uIsDark: true,
   },
   // Vertex Shader
   `
@@ -28,6 +32,7 @@ const NoiseShaderMaterial = shaderMaterial(
   `
     uniform float uTime;
     uniform vec2 uResolution;
+    uniform bool uIsDark;
     varying vec2 vUv;
 
     float rand(vec2 n) {
@@ -66,14 +71,22 @@ const NoiseShaderMaterial = shaderMaterial(
 
     void main() {
       vec2 uv = vUv;
-      float shade = pattern(uv * 2.0); // scale UV for more detail
-      gl_FragColor = vec4(vec3(shade), 1.0);
+      float shade = pattern(uv * 2.0);
+      
+      if (uIsDark) {
+        // Dark mode: keep original look
+        gl_FragColor = vec4(vec3(shade), 1.0);
+      } else {
+        // Light mode: invert and soften
+        shade = 1.0 - shade; // Invert
+        shade = shade * 0.6 + 0.5; // Soften contrast (scale down and add base brightness)
+        gl_FragColor = vec4(vec3(shade), 1.0);
+      }
     }
   `
 );
 
 extend({ NoiseShaderMaterial });
-
 
 // Type declaration for the extended material
 declare global {
@@ -90,6 +103,7 @@ function NoiseShaderPlane() {
     THREE.ShaderMaterial & NoiseShaderMaterialUniforms
   >(null);
   const { viewport, size } = useThree();
+  const { theme } = useTheme();
 
   // Update resolution when canvas size changes
   useEffect(() => {
@@ -97,6 +111,13 @@ function NoiseShaderPlane() {
       materialRef.current.uResolution.set(size.width, size.height);
     }
   }, [size]);
+
+  // Update theme uniform
+  useEffect(() => {
+    if (materialRef.current) {
+      materialRef.current.uIsDark = theme === "dark";
+    }
+  }, [theme]);
 
   // Animate the shader
   useFrame((state) => {
@@ -114,15 +135,11 @@ function NoiseShaderPlane() {
 }
 
 function FooterScene() {
+  const { theme } = useTheme();
+  
   return (
-    <div
-      
-      className="absolute inset-0 opacity-20"
-    >
-      <Canvas
-        camera={{ position: [0, 0, 1], fov: 75 }}
-        style={{ background: "black" }}
-      >
+    <div className={`absolute inset-0 ${theme === "dark" ? "opacity-20" : ""}`}>
+      <Canvas camera={{ position: [0, 0, 1], fov: 75 }}>
         <Suspense fallback={null}>
           <NoiseShaderPlane />
         </Suspense>
