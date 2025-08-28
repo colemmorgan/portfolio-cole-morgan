@@ -1,9 +1,9 @@
 import { Menu, Moon, Sun } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useTheme from "../../hooks/useTheme";
 import { AnimatePresence, motion } from "motion/react";
 import { contactLinks, sectionAnchors } from "../../NavContent";
-import scrollToSection from "../../utils/scrollToSection";
+
 
 export default function MobileNav() {
   const { theme, toggleTheme } = useTheme();
